@@ -56,7 +56,7 @@
         <tr>
             <td colspan="2">
                 <div class="search-container">
-                    <input type="text" id="search-input" placeholder="Search ID Card..." maxlength="13" oninput="filterTable()" onkeypress="return isNumberKey(event)"/>
+                    <input type="text" id="search-input" placeholder="Enter 13 digits without dashes" maxlength="13" oninput="filterTable()" onkeypress="return isNumberKey(event)"/>
                     <button onclick="showTable()">Show Table</button>
                     <div id="not-found" class="not-found"><h1>You are Not Eligible</h1></div>
                 </div>
@@ -86,11 +86,6 @@
         <tr><td>10</td><td>noor ul amin</td><td>3710510523124</td><td>Ikhlas</td><td>Pindigheb</td></tr>
     </table>
 
-
-
-
-
-
 <!--Yahan Sa Page ka final hissa start Ho gaya ha-->    
 
 <div class="image-container">
@@ -106,6 +101,11 @@ Special Thanks to <br><b>Malik Noor Zaman Sahib</b><br> & <br> <b>Naeem Haider S
 </td>
 </tr>
     </table>
+
+
+
+
+<!--Yahan Sa Java Script Starh ha-->    
 
     <script>
         function showTable() {
@@ -123,6 +123,14 @@ Special Thanks to <br><b>Malik Noor Zaman Sahib</b><br> & <br> <b>Naeem Haider S
             notFoundDiv.style.display = 'none'; // Hide "Not Eligible" message on new search
             const table = document.getElementById('data-table');
             const rows = table.getElementsByTagName('tr');
+
+            if (input === "") {
+                for (let i = 1; i < rows.length; i++) {
+                    rows[i].style.display = 'none';
+                }
+                return;
+            }
+
             let isTableShown = false;
             let isFound = false;
 
