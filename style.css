@@ -12,12 +12,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100vh; /* Center vertically */
+    text-align: center;
+    margin-top: 300px; /* Add space at the top */
 }
 
 h1 {
     color: #007bff;
     margin-bottom: 20px;
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 .image-container {
@@ -87,13 +91,14 @@ button:hover {
 }
 
 table {
-    width: 100%;
+    width: 80%; /* Adjust the width as needed */
     border-collapse: collapse;
     font-size: 0.9em;
+    margin: 20px 0; /* Space between tables */
 }
 
 th, td {
-    border: 1px solid #ddd;
+    border: 1px solid w#f2f2f2;
     padding: 6px;
 }
 
