@@ -101,6 +101,9 @@ th, td {
     border: 1px solid w#f2f2f2;
     padding: 6px;
 }
+tr {
+    text-align: center;
+}
 
 th {
     background-color: #f2f2f2;
