@@ -12,11 +12,17 @@ document.querySelectorAll('.zoom-image').forEach(image => {
     });
 });
 
-function sendOrder(productName, productCode, productPrice, productAvailability, userNameId, userNumberId, quantityId, addressId) {
-    var userName = document.getElementById(userNameId).value;
-    var userNumber = document.getElementById(userNumberId).value;
-    var quantity = document.getElementById(quantityId).value;
-    var address = document.getElementById(addressId).value;
+function sendOrder(button) {
+    const productBox = button.closest('.product-box');
+    const productName = productBox.getAttribute('data-name');
+    const productCode = productBox.getAttribute('data-code');
+    const productPrice = productBox.getAttribute('data-price');
+    const productAvailability = productBox.getAttribute('data-availability');
+
+    const userName = productBox.querySelector('#userName').value;
+    const userNumber = productBox.querySelector('#userNumber').value;
+    const quantity = productBox.querySelector('#quantity').value;
+    const address = productBox.querySelector('#address').value;
 
     const message = `Order for Product:\nName: ${productName}\nCode: ${productCode}\nPrice: ${productPrice}\nAvailability: ${productAvailability}\n\nCustomer Info:\nName: ${userName}\nPhone Number: ${userNumber}\nQuantity: ${quantity}\nAddress: ${address}`;
     const whatsappLink = `https://wa.me/923295453167?text=${encodeURIComponent(message)}`;
